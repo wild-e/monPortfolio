@@ -3,12 +3,12 @@
 {% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
+    {{ include('home/_navbar.html.twig') }}
+
     {% if app.user is defined %}
         <a href="{{ path('admin_index') }}">Espace Admin</a>
     {% else %}
         <a href="{{ path('app_login') }}">Connexion</a>
     {% endif %}
-    <a href="{{ path('home_index') }}">CV</a>
-    <a href="{{ path('home_contact') }}">Contact</a>
 
 {% endblock %}
