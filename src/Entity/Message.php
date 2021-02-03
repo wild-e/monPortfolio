@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\MessageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=MessageRepository::class)
@@ -22,8 +23,8 @@ class Message
      * @ORM\Column(type="string", length=100)
      * @var string
      * @Assert\Length(
-     *      min = "2"
-     *      message = "Votre prénom doit avoir un minimum de 2 lettres..."
+     *      min = 2,
+     *      minMessage = "Votre prénom doit avoir un minimum de {{ limit }} lettres..."
      * )
      */
     private $firstname;
@@ -32,8 +33,8 @@ class Message
      * @ORM\Column(type="string", length=100)
      * @var string
      * @Assert\Length(
-     *      min = "2"
-     *      message = "Votre nom doit avoir un minimum de 2 lettres..."
+     *      min = 2,
+     *      minMessage = "Votre prénom doit avoir un minimum de {{ limit }} lettres..."
      * )
      */
     private $lastname;
@@ -51,8 +52,8 @@ class Message
      * @ORM\Column(type="text")
      * @var string
      * @Assert\Length(
-     *      min = "10"
-     *      message = "Merci d'écrire quelque chose qui pourra m'intéresser !"
+     *      min = 10,
+     *      minMessage = "Merci d'écrire quelque chose qui pourra m'intéresser !"
      * )
      */
     private $message;
