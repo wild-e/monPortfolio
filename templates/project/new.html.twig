@@ -1,6 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Project{% endblock %}
+{% block title %}Nouveau Projet | {{ parent()}} {% endblock %}
+
+{% block javascripts %}
+    <script 
+        src="https://cdn.tiny.cloud/1/w035tl5o6xkmg8i2tdr74e4vzcpn5f3wjxvfw3pxi7ymlw96/tinymce/5/tinymce.min.js" 
+        referrerpolicy="origin">
+    </script>
+    <script>
+        tinymce.init({
+        selector: '#project_text'
+        });
+    </script>
+{% endblock %}
 
 {% block body %}
     <h1>Create new Project</h1>
