@@ -1,10 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Wild Emmanuelle | Dev web Junior{% endblock %}
+{% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
-<a href="{{ path('app_login') }}">Connexion</a>
-<a href="{{ path('home_index') }}">CV</a>
-<a href="{{ path('home_contact') }}">Contact</a>
+    {% if app.user is defined %}
+        <a href="{{ path('admin_index') }}">Espace Admin</a>
+    {% else %}
+        <a href="{{ path('app_login') }}">Connexion</a>
+    {% endif %}
+    <a href="{{ path('home_index') }}">CV</a>
+    <a href="{{ path('home_contact') }}">Contact</a>
 
 {% endblock %}
