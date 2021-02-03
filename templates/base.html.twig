@@ -8,7 +8,9 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-    {{ include('home/_navbar.html.twig') }}
+        </header>
+            {{ include('home/_navbar.html.twig') }}
+        </header>
 
         {# Display app flashes  #}
         {% for label, messages in app.flashes(['success', 'warning', 'notice']) %}

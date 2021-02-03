@@ -6,7 +6,7 @@ use App\Entity\Message;
 use App\Form\EmailType;
 use Symfony\Component\Mime\Email;
 use App\Repository\MessageRepository;
-use App\Repository\ProjectRepository;
+use App\Service\ChuckNorrisApi;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +23,12 @@ class AdminController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('admin/index.html.twig');
+        $joke = new ChuckNorrisApi();
+        $joke = $joke->randomJoke();
+
+        return $this->render('admin/index.html.twig', [
+            'joke' => $joke
+        ]);
     }
 
     /**
