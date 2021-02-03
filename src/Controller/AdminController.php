@@ -36,7 +36,7 @@ class AdminController extends AbstractController
     }
     
     /**
-     * @Route("/message/delete/{id}", name="message_delete", methods={"DELETE"})
+     * @Route("/message/delete/{id}", name="_message_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Message $message): Response
     {
