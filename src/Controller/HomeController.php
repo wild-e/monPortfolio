@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Message;
+use App\Entity\Project;
 use App\Form\MessageType;
+use App\Repository\ProjectRepository;
 use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -64,5 +66,15 @@ class HomeController extends AbstractController
             'contactForm' => $contactForm->createView(),
         ]);
 
+    }
+
+    /**
+     * @Route("/portfolio/{project}", name="_portfolio", methods={"GET", "POST"})
+     */
+    public function portfolio(Project $project): Response
+    {
+        return $this->render('home/project.html.twig', [
+            'project' => $project
+        ]);
     }
 }

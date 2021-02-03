@@ -8,6 +8,8 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
+    {{ include('home/_navbar.html.twig') }}
+
         {# Display app flashes  #}
         {% for label, messages in app.flashes(['success', 'warning', 'notice']) %}
             {% for message in messages %}

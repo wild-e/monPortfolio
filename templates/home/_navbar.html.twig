@@ -1,3 +1,5 @@
 <a href="{{ path('home_index') }}">CV</a>
-<a href="{{ path('home_portfolio') }}">Portfolio</a>
+    {% for portfolio in portfolios.portfolios %}
+        <a href="{{ path('home_portfolio', {'project': portfolio.id } ) }}">{{ portfolio.title }}</a>
+    {% endfor %}
 <a href="{{ path('home_contact') }}">Contact</a>
