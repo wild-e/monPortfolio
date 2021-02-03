@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Message;
 use App\Entity\Project;
 use App\Form\MessageType;
-use App\Repository\ProjectRepository;
 use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;

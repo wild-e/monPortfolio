@@ -3,7 +3,8 @@
 {% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
-    {% if app.user is defined %}
+
+    {% if app.user %}
         <a href="{{ path('admin_index') }}">Espace Admin</a>
     {% else %}
         <a href="{{ path('app_login') }}">Connexion</a>
