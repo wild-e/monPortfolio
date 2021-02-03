@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Envoie d'e-mail | Wild Emmanuelle {% endblock %}
+
+{% block body %}
+
+{{ form_start(emailForm) }}
+    {{ form_widget(emailForm.subject) }}
+    {{ form_widget(emailForm.message) }}
+    <button class="btn">{{ button_label|default('Envoyer') }}</button>
+{{ form_end(emailForm) }}
+
+{% endblock %}

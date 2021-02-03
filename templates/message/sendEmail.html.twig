@@ -1,0 +1,10 @@
+<h1>{{ emailToSend.subject }}</h1>
+
+<p> Bonjour {{ message.lastname ~ ' ' ~ message.firstname}}, <br>
+{{emailToSend.message }} </p>
+
+
+<p> Merci pour votre message sur <a href="{{ url('home_index') }}">mon portfolio</a>
+
+<p>Cordialement,<br>
+WILD Emmanuelle</p>

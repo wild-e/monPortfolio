@@ -8,12 +8,15 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        {% block body %}
-            {% for message in app.flashes('notice') %}
-                <div class="flash-notice">
+        {# Display app flashes  #}
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash-{{ label }}">
                     {{ message }}
                 </div>
             {% endfor %}
-        {% endblock %}
+        {% endfor %}
+        
+        {% block body %}{% endblock %}
     </body>
 </html>
