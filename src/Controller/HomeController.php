@@ -32,7 +32,7 @@ class HomeController extends AbstractController
     public function contact(Request $request, MailerInterface $mailer, UserRepository $userRepository
     ): Response
     {
-        $adminEmail = $userRepository->findByRoles(['ROLE_ADMIN']);
+        $admin = $userRepository->findOneBy([]);
 
         $message = new Message();
         $contactForm = $this->createForm(MessageType::class, $message);
@@ -46,7 +46,7 @@ class HomeController extends AbstractController
 
             $email = (new Email())
             ->from($contactForm->get('email')->getData())
-            ->to($adminEmail[0])
+            ->to($admin->getEmail())
             ->subject("J'ai un nouveau message sur mon portfolio!")
             ->html($this->renderView('message/messageEmail.html.twig', [
                 'message' => $message
