@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact | Wild Emmanuelle {% endblock %}
+
+{% block body %}
+
+{{ form_start(contactForm) }}
+    {{ form_widget(contactForm) }}
+    <button class="btn">{{ button_label|default('Envoyer') }}</button>
+{{ form_end(contactForm) }}
+
+{% endblock %}

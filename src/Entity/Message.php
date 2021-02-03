@@ -14,26 +14,46 @@ class Message
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @var int
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @var string
+     * @Assert\Length(
+     *      min = "2"
+     *      message = "Votre prénom doit avoir un minimum de 2 lettres..."
+     * )
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @var string
+     * @Assert\Length(
+     *      min = "2"
+     *      message = "Votre nom doit avoir un minimum de 2 lettres..."
+     * )
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
+     * @Assert\Email(
+     *     message = "Cet email :'{{ value }}' ne ressemble pas à un email."
+     * )
      */
     private $email;
 
     /**
      * @ORM\Column(type="text")
+     * @var string
+     * @Assert\Length(
+     *      min = "10"
+     *      message = "Merci d'écrire quelque chose qui pourra m'intéresser !"
+     * )
      */
     private $message;
 
