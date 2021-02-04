@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Project{% endblock %}
+{% block title %}Editer un projet | {{ parent() }}{% endblock %}
 
 {% block javascripts %}
     <script 
@@ -15,12 +15,10 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Edit Project</h1>
-
-    {{ include('project/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('project_index') }}">back to list</a>
-
-    {{ include('project/_delete_form.html.twig') }}
+    {{ include('project/_form.html.twig') }}
+    <div class="flex-center">
+        <a class="btn first" href="{{ path('project_index') }}">back to list</a>
+        {{ include('project/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
 

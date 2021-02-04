@@ -91,6 +91,10 @@ footer p {
     margin: 0;
 }
 
+table{
+    margin: 1.5em;
+}
+
 
 /* buttons  */
 
@@ -170,7 +174,8 @@ footer p {
   }
   
   input, 
-  textarea {
+  textarea,
+  select {
 
     font: inherit;
     margin: 0.2em;
