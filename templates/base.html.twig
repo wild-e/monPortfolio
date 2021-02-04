@@ -38,7 +38,10 @@
         </div>
         <footer>
             <p>
-                © 2021 WILD Emmanuelle | 
+                © 2021 WILD Emmanuelle 
+                <a href="https://www.linkedin.com/in/wild-e/"><img width="15" src="{{ asset('build/linkedin.png') }}" alt"LinkedIn"></a>
+                <a href="https://github.com/wild-e"><img width="15" src="{{ asset('build/github.png') }}" alt"Github"></a>
+                |
                 {% if app.user %}
                     <a href="{{ path('admin_index') }}">Espace Admin</a>
                 {% else %}

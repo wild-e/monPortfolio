@@ -6,8 +6,9 @@
 
 {% block body %}
 
-    {{ project.title }}
-    {{ project.addDate|date("d.m.Y") }}
+    <h4>{{ project.title }}</h4>
+    
+    <small>{{ project.addDate|date("d.m.Y") }}</small>
     {{ project.text|raw }}
 
 {% endblock %}
