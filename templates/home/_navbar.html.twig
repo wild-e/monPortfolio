@@ -1,12 +1,23 @@
-{% if app.user %}
-    <a href="{{ path('home_index') }}">CV</a>
-    <a href="{{ path('admin_message_index') }}">Mes messages</a>
-    <a href="{{ path('project_index') }}">Mes projets</a>
-    <a href="{{ path('app_logout') }}">Déconnexion</a>
-{% else %}
-    <a href="{{ path('home_index') }}">CV</a>
-        {% for portfolio in portfolios.portfolios %}
-            <a href="{{ path('home_portfolio', {'project': portfolio.id } ) }}">{{ portfolio.title }}</a>
-        {% endfor %}
-    <a href="{{ path('home_contact') }}">Contact</a>
-{% endif %}
+    {% if app.user %}
+        <a href="{{ path('home_index') }}">CV</a>
+        /
+        <a href="{{ path('admin_message_index') }}">Mes messages</a>
+        /
+        <a href="{{ path('project_index') }}">Mes projets</a>
+        /
+        <a href="{{ path('app_logout') }}">Déconnexion</a>
+    {% else %}
+        <a href="{{ path('home_index') }}">CV</a>
+        /
+        <a href="{{ path('home_contact') }}">Contact</a>
+        /
+        <div class="dropdown">
+            <button class="dropbtn">Portfolio
+            </button>
+            <div class="dropdown-content">
+                {% for portfolio in portfolios.portfolios %}
+                    <a href="{{ path('home_portfolio', {'project': portfolio.id } ) }}">{{ portfolio.title }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
