@@ -3,37 +3,19 @@
 {% block title %}Message index | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Mes messages</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Message</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <h4>Mes messages</h4>
+    <div class="form-style">
         {% for message in messages %}
-            <tr>
-                <td>{{ message.id }}</td>
-                <td>{{ message.firstname }}</td>
-                <td>{{ message.lastname }}</td>
-                <td>{{ message.email }}</td>
-                <td>{{ message.message }}</td>
-                <td>
-                    {{ include('message/_delete_form.html.twig') }}
-                    <a href="{{ path('admin_send_email', {'message': message.id }) }}">Répondre</a>
-                </td>
-            </tr>
+            <h4>{{ message.firstname ~ ' ' ~ message.lastname }}</h4>
+            <small>{{ message.email }}</small>
+            <p>{{ message.message }}</p>
+            <div class="flex-center">
+                {{ include('message/_delete_form.html.twig') }}
+                <a class="btn first" href="{{ path('admin_send_email', {'message': message.id }) }}">Répondre</a>
+            </div>
         {% else %}
-            <tr>
-                <td colspan="6">Il n'y a pas de messages</td>
-            </tr>
+            <p>Il n'y a pas de messages</p>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
+
 {% endblock %}
