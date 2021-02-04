@@ -8,19 +8,38 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        </header>
-            {{ include('home/_navbar.html.twig') }}
-        </header>
-
-        {# Display app flashes  #}
-        {% for label, messages in app.flashes(['success', 'warning', 'notice']) %}
-            {% for message in messages %}
-                <div class="flash-{{ label }}">
-                    {{ message }}
+        <div class="container">
+            <header>
+                <div>
+                    <h1>WILD Emmanuelle</h1>
+                    <h2>Dev web Junior</h2>
                 </div>
-            {% endfor %}
-        {% endfor %}
-
-        {% block body %}{% endblock %}
+                <nav>
+                    {{ include('home/_navbar.html.twig') }}
+                </nav>
+            </header>
+            <main>
+                {# Display app flashes  #}
+                {% for label, messages in app.flashes(['success', 'warning', 'notice']) %}
+                    {% for message in messages %}
+                        <div class="flash-{{ label }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% block body %}
+                {% endblock %}
+            </main>
+        </div>
+        <footer>
+            <p>
+                © 2021 WILD Emmanuelle | 
+                {% if app.user %}
+                    <a href="{{ path('admin_index') }}">Espace Admin</a>
+                {% else %}
+                    <a href="{{ path('app_login') }}">Connexion</a>
+                {% endif %}
+            </p>
+        </footer>
     </body>
 </html>
