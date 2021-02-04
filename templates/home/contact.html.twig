@@ -9,9 +9,32 @@
 {% block body %}
 
 {{ form_start(contactForm) }}
-    {{ form_widget(contactForm) }}
-    <div class="g-recaptcha" data-sitekey="6LdNyUgaAAAAAAOFqTtMrIe4ZOqIRwZGn4Yhc8cx"></div>
-    <button class="btn">{{ button_label|default('Envoyer') }}</button>
+    <ol>
+        <li>
+            {{ form_label(contactForm.firstname, 'Prénom') }}
+            {{ form_errors(contactForm.firstname) }}
+            {{ form_widget(contactForm.firstname) }}
+        </li>
+        <li>
+            {{ form_label(contactForm.lastname, 'Nom') }}
+            {{ form_errors(contactForm.lastname) }}
+            {{ form_widget(contactForm.lastname) }}
+        </li>
+        <li>
+            {{ form_label(contactForm.email, 'Email') }}
+            {{ form_errors(contactForm.email) }}
+            {{ form_widget(contactForm.email) }}
+        </li>
+        <li>
+            {{ form_label(contactForm.message, 'Message') }}
+            {{ form_errors(contactForm.message) }}
+            {{ form_widget(contactForm.message) }}
+        </li>
+        <div class="form-group g-recaptcha" data-sitekey="6LdNyUgaAAAAAAOFqTtMrIe4ZOqIRwZGn4Yhc8cx"></div>
+        <li class="form-group">
+            <button class="btn">{{ button_label|default('Envoyer') }}</button>
+        </li>
+    </ol>
 {{ form_end(contactForm) }}
 
 {% endblock %}
