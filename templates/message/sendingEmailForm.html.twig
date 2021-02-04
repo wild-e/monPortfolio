@@ -5,9 +5,20 @@
 {% block body %}
 
 {{ form_start(emailForm) }}
-    {{ form_widget(emailForm.subject) }}
-    {{ form_widget(emailForm.message) }}
-    <button class="btn">{{ button_label|default('Envoyer') }}</button>
+    <h2>Répondre à {{ message.firstname ~ ' ' ~ message.lastname }}</h2>
+    <ol>
+        <li>
+            <label>Sujet</label>
+            {{ form_widget(emailForm.subject) }}
+        </li>
+        <li>
+            <label>Message</label>
+            {{ form_widget(emailForm.message) }}
+        </li>
+        <li class="form-group">
+            <button class="btn first">{{ button_label|default('Envoyer') }}</button>
+        </li>
+    </ol>
 {{ form_end(emailForm) }}
 
 {% endblock %}

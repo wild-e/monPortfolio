@@ -70,10 +70,12 @@ class AdminController extends AbstractController
 
         if ($emailForm->isSubmitted() && $emailForm->isValid()) {
             $emailToSend = $emailForm->getData();
+            $admin = $this->getUser()->getEmail();
 
             $email = (new Email())
-            ->from($this->getUser()->getEmail())
+            ->from($admin)
             ->to($message->getEmail())
+            ->addCc($admin)
             ->subject($emailForm->get('subject')->getData())
             ->html($this->renderView('message/sendEmail.html.twig', [
                 'emailToSend' => $emailToSend,
@@ -85,7 +87,7 @@ class AdminController extends AbstractController
                 'notice',
                 'Email envoyé!'
             );
-            return $this->redirectToRoute('message_index');
+            return $this->redirectToRoute('admin_message_index');
         }
         
 
