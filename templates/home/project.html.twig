@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} 
+    {{ project.title }} | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    {{ project.title }}
+    {{ project.addDate|date("d.m.Y") }}
+    {{ project.text|raw }}
+
+{% endblock %}

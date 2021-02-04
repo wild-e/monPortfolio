@@ -1,30 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Project index{% endblock %}
+{% block title %}Mes projets | {{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Project index</h1>
-
-    <table class="table">
+    <h4>Mes projets</h4>
+    <div class="form-group">
+        <a class="btn first" href="{{ path('project_new') }}">Ajouter un projet</a>
+    </div>
+    <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>AddDate</th>
-                <th>Title</th>
-                <th>Text</th>
-                <th>actions</th>
+                <th>Date d'ajout</th>
+                <th>Titre</th>
+                <th>Modifier</th>
             </tr>
         </thead>
         <tbody>
         {% for project in projects %}
             <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.addDate ? project.addDate|date('Y-m-d') : '' }}</td>
+                <td>{{ project.addDate ? project.addDate|date('d-m-Y') : '' }}</td>
                 <td>{{ project.title }}</td>
-                <td>{{ project.text }}</td>
                 <td>
-                    <a href="{{ path('project_show', {'id': project.id}) }}">show</a>
-                    <a href="{{ path('project_edit', {'id': project.id}) }}">edit</a>
+                    <a class="btn first" href="{{ path('project_edit', {'id': project.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +32,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('project_new') }}">Create new</a>
 {% endblock %}

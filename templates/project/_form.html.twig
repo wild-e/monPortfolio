@@ -1,4 +1,26 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {% if "/project/2/edit" in app.request.server.get('REQUEST_URI') %}
+        <h4>Editer un projet</h4>
+    {% else %}
+        <h4>Ajouter un projet</h4>
+    {% endif %}
+    <ol>
+        <li>
+            {{ form_label(form.addDate, 'Date') }}
+            {{ form_errors(form.addDate) }}
+            {{ form_widget(form.addDate) }}
+        </li>
+        <li>
+            {{ form_label(form.title, 'Titre') }}
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title) }}
+        </li>
+        <li>
+            {{ form_errors(form.text) }}
+            {{ form_widget(form.text) }}
+        </li>
+        <li class="form-group">
+            <button class="btn first">{{ button_label|default('Sauvegarder') }}</button>
+        </li>
+    </ol>
 {{ form_end(form) }}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace admin | {{ parent() }}{% endblock %}
+
+{% block body %}
+<h4>Mon Dashboard</h4>
+<div class="form-group">
+    <img src="{{ joke.icon_url}}" alt="Chuck Norris images">
+    <p>{{ joke.value}}</p>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="parent">
+        <div class="main">
+            <h4>A propos</h4>
+            <p>
+                Après 8 ans comme aide-soignante, j'ai eu envie de prendre un nouvel élan et de me lancer dans la tech.
+                J'ai ainsi intégré la Wild Code School. A présent, je suis à la recherche d'opportunités professionnelles.
+            </p>
+            <h4>Expériences professionnelles</h4>
+            <h5>Project Fictif Stras'Gîte</h5>
+            <h6>Wild Code School - nov 2020</h6>
+            <ul>
+                <li>Mise en place d'une architecture MVC</li>
+                <li>Utilisation du paradigme POO</li>
+                <li>Réalisations de différents CRUD</li>
+                <li>Connexion aux BDD en PDO et requête préparée</li>
+                <li>Sécurisation des formulaires par la mise en place de services</li>
+                <li>Mise en place d'un workflow Github</li>
+            </ul>
+            <h5>Project Fictif Hackerman's CV</h5>
+            <h6>Wild Code School - oct 2020</h6>
+            <ul>
+                <li>Réalisation des pages en HTML et CSS</li>
+                <li>Initiation à l'utilisation de Github</li>
+                <li>Utilisation de JS</li>
+            </ul>
+            <h4>Formation</h4>
+            <h5>Développeur web et web mobile</h5>
+            <h6>Wild Code School | STRASBOURG | Sept. 2020 - Juin 2021</h6>
+            <ul>
+                <li>Formation PHP/Symfony/JS/MySQL</li>
+                <li>Mise en pratique des méthodes AGILE et SCRUM</li>
+                <li>Réalisation d'un projet fictif en PHP/mySQL/twig</li>
+                <li>Travail en remote</li>
+            <ul>
+        </div>
+        <div class="aside">
+            <img class="me" src="{{ asset('build/wild-emmanuelle.png') }}" alt="Wild Emmanuelle | Web dev junior | FRANCE Strasbourg">
+            <h4>Hard skills</h4>
+            <ul>
+                <li>PHP</li>
+                <li>HTML/CSS</li>
+                <li>MySQL</li>
+                <li>Bootstrap</li>
+                <li>Github</li>
+            </ul>
+            <h4>Soft skills</h4>
+            <ul>
+                <li>Autonomie</li>
+                <li>Travail en équipe</li>
+                <li>Capacité d'adaptation</li>
+                <li>Travail en remote</li>
+                <li>Gestion des priorités</li>
+            </ul>
+            <h4>Langues</h4>
+            <ul>
+                <li>Anglais / Cambridge FCE</li>
+                <li>Français / Langue maternelle</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
