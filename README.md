@@ -1,6 +1,7 @@
 # monPortfolio || WILD Emmanuelle
 ## Web developper junior
-This is checkpoint 4 at Wild Code School. I made this in 18 hours.
+
+This is checkpoint 4 at Wild Code School. We had 2 days.
 
 >> You'll find the wireframe, user stories and DB schema in : src/resources.
 

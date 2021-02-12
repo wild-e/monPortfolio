@@ -19,7 +19,7 @@ class ReCaptchaApi
         if ($statusCode === 200) {
             $apiResponse = $response->getContent();
             $apiResponse = $response->toArray();
-            // convert the response (here in JSON) to an PHP array
+            // convert the response (here in JSON) to a PHP array
             
             return $apiResponse;
         }
