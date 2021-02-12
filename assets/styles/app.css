@@ -50,6 +50,11 @@ a{
     grid-template-columns: minmax(150px, 25%) 1fr;
   }
 
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .me{
     max-width: 70%;
 }
@@ -95,6 +100,15 @@ table{
     margin: 1.5em;
 }
 
+img{
+  filter: grayscale(60%);
+  border-radius: 2%;
+
+}
+
+img:hover{
+  filter: grayscale(0);
+}
 
 /* buttons  */
 

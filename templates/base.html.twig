@@ -14,9 +14,15 @@
     <body>
         <div class="container">
             <header>
-                <div>
+                <div contenteditable>
                     <h1>WILD Emmanuelle</h1>
-                    <h2>Dev web Junior</h2>
+                    <h2>  
+                        <span
+                            class="txt-rotate"
+                            data-period="2000"
+                            data-rotate='[ "Web dev Junior.", "PHP/Symfony.", "Autonome.", "Sérieuse.", "Motivée."]'>
+                        </span>
+                    </h2>
                 </div>
                 <nav>
                     {{ include('home/_navbar.html.twig') }}
@@ -38,7 +44,10 @@
         </div>
         <footer>
             <p>
-                © 2021 WILD Emmanuelle | 
+                © 2021 WILD Emmanuelle 
+                <a href="https://www.linkedin.com/in/wild-e/"><img width="15" src="{{ asset('build/linkedin.png') }}" alt"LinkedIn"></a>
+                <a href="https://github.com/wild-e"><img width="15" src="{{ asset('build/github.png') }}" alt"Github"></a>
+                |
                 {% if app.user %}
                     <a href="{{ path('admin_index') }}">Espace Admin</a>
                 {% else %}

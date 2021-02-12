@@ -14,11 +14,10 @@ class ReCaptchaApi
             'https://www.google.com/recaptcha/api/siteverify?secret=XXX&response=' . $userResponse
         );
         
-        $statusCode = $response->getStatusCode(); // get Response status code 200
+        $statusCode = $response->getStatusCode();
 
         if ($statusCode === 200) {
             $apiResponse = $response->getContent();
-
             $apiResponse = $response->toArray();
             // convert the response (here in JSON) to a PHP array
             

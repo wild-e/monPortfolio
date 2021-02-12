@@ -6,14 +6,24 @@
     {% endif %}
     <ol>
         <li>
+            {{ form_label(form.title, 'Titre') }}
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title) }}
+        </li>
+        <li>
             {{ form_label(form.addDate, 'Date') }}
             {{ form_errors(form.addDate) }}
             {{ form_widget(form.addDate) }}
         </li>
         <li>
-            {{ form_label(form.title, 'Titre') }}
-            {{ form_errors(form.title) }}
-            {{ form_widget(form.title) }}
+            {{ form_label(form.link, 'Lien Github') }}
+            {{ form_errors(form.link) }}
+            {{ form_widget(form.link) }}
+        </li>
+        <li>
+            {{ form_label(form.image, 'Image') }}
+            {{ form_errors(form.image) }}
+            {{ form_widget(form.image) }}
         </li>
         <li>
             {{ form_errors(form.text) }}

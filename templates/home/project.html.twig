@@ -6,8 +6,16 @@
 
 {% block body %}
 
-    {{ project.title }}
-    {{ project.addDate|date("d.m.Y") }}
-    {{ project.text|raw }}
+    <h4>{{ project.title }}</h4>
+    <div>
+        <a href="{{ project.link }}">Voir sur GitHub</a>
+    </div>
+    <div>
+        <small>{{ project.addDate|date("d.m.Y") }}</small>
+    </div>
+    <div class="project">
+        <img width="100%" src="{{ asset('build/') }}{{ project.image }}"></img>
+        {{ project.text|raw }}
+    </div>
 
 {% endblock %}

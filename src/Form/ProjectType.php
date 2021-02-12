@@ -19,6 +19,8 @@ class ProjectType extends AbstractType
                 'widget' => 'single_text',
             ])
             ->add('title', TextType::class)
+            ->add('link', TextType::class)
+            ->add('image', TextType::class)
             ->add('text', TextareaType::class)
         ;
     }
