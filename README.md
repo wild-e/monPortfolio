@@ -7,11 +7,12 @@ This is checkpoint 4 at Wild Code School. We had 2 days.
 
 ### How to clone this repo and make it work
 * use git clone [https://github.com/wild-e/monPortfolio](https://github.com/wild-e/monPortfolio)
-* composer install
+* composer install && yarn install
 * set up an .env.local file, and modify : DATABASE_URL="mysql:// 's line
 * run : symfony console doctrine:database:create
 * run : bin/console d:s:u --force
-* make a mailtrap account and add your MAILER_DSN infos in : .env.local
+* make a mailtrap account (or anything else...) and add your MAILER_DSN infos in : .env.local
+* run : yarn encore dev
 * run : php bin/console doctrine:fixtures:load
 * launch symfony or php server
 * have fun !
