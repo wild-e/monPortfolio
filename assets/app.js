@@ -10,3 +10,6 @@ import './styles/app.css';
 
 // JS
 import './title.js';
+
+// Tailwind
+import "tailwindcss/tailwind.css"
